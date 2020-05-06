@@ -1,0 +1,8 @@
+```python
+class Solution:
+
+	def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
+
+​   	return str(t) in str(s)
+```
+
