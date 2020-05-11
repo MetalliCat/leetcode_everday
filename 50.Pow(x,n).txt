@@ -1,0 +1,17 @@
+```python
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        # 三种情况
+        # n为负数 pow(1/x, -n)
+        # n为正奇数 x*pow(x, n-1)
+        # n为正偶数 pow(x^2, n/2)  二分比直接用奇数的递推快
+        if n == 0:
+            return 1
+        if n < 0 :
+            x = 1/x
+            n = -n
+        if n % 2:
+            return x*self.myPow(x, n-1)
+        return self.myPow(x*x, n/2)
+```
+
