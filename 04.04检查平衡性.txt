@@ -1,0 +1,19 @@
+```python
+class Solution:
+    def __init__(self):
+        self.flag = True
+    def isBalanced(self, root: TreeNode) -> bool:
+		# 当一棵树不平衡时，其子树均不平衡
+        
+        def isb(root):
+            if not root:
+                return 0
+            l = isb(root.left) + 1
+            r =  isb(root.right) + 1
+            if abs(l-r)>1:
+                self.flag = False      
+            return max(l,r)
+        isb(root)
+        return self.flag
+```
+
